@@ -8,10 +8,17 @@ function clearDisplay(){
     display.value = "";
 }
 
+const historyEl = document.getElementById("history");
+
 function calculate(){
     try{
-        display.value = eval(display.value);
-    }catch{
+        const expression = display.value;
+        const result = eval(expression);
+
+        historyEl.innerText = expression + " =";
+        display.value = result;
+
+    } catch {
         display.value = "Error";
     }
 }

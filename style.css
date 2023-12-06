@@ -12,6 +12,13 @@ body {
     border-radius: 10px;
 }
 
+#history {
+    color: #ccc;
+    text-align: right;
+    min-height: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
 input {
     width: 100%;
     margin-bottom: 10px;
