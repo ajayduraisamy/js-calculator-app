@@ -1,4 +1,5 @@
 const display = document.getElementById("display");
+const historyEl = document.getElementById("history");
 
 function press(val){
     display.value += val;
@@ -6,16 +7,15 @@ function press(val){
 
 function clearDisplay(){
     display.value = "";
+    historyEl.innerText = "";
 }
-
-const historyEl = document.getElementById("history");
 
 function calculate(){
     try{
-        const expression = display.value;
-        const result = eval(expression);
+        const exp = display.value;
+        const result = eval(exp);
 
-        historyEl.innerText = expression + " =";
+        historyEl.innerText = exp + " =";
         display.value = result;
 
     } catch {
@@ -26,9 +26,9 @@ function calculate(){
 // Keyboard support
 document.addEventListener("keydown", (e) => {
 
-    const allowedKeys = "0123456789/*-+.";
+    const valid = "0123456789/*-+.";
 
-    if(allowedKeys.includes(e.key)){
+    if(valid.includes(e.key)){
         press(e.key);
     }
 
